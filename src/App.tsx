@@ -6,6 +6,8 @@ function App() {
 	const id = useRef<null | ReturnType<typeof setInterval>>(null);
 
 	function printTime(value: number) {
+		if (!value) return '00:00:00';
+
 		const s = value % 60;
 		const m = Math.floor((value / 60) % 60);
 		const h = Math.floor(value / 3600);
@@ -40,7 +42,7 @@ function App() {
 	return (
 		<div>
 			<div>
-				<input value={count} onChange={e => setCount(+e.target.value)} type="number" />
+				<input value={count} onChange={e => setCount(parseInt(e.target.value))} type="number" step={1} min={0} />
 				<button onClick={isTimerRunning ? stopTimer : startTimer}>{isTimerRunning ? 'stop' : 'start'}</button>
 			</div>
 			<br />
