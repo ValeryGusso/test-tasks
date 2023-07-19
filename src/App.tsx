@@ -22,7 +22,7 @@ function App() {
 		id.current = setInterval(() => {
 			setCount(prev => {
 				if (prev === 0) {
-					clearInterval(id.current!);
+					stopTimer();
 					return prev;
 				}
 				return prev - 1;
