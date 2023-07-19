@@ -1,0 +1,23 @@
+.list {
+	width: 100%;
+	display: flex;
+	column-gap: 30px;
+	list-style: none;
+	padding-top: 15px;
+}
+.link {
+	text-decoration: none;
+	list-style: none;
+	font-family: Inter;
+	font-size: var(--font-regular);
+	color: var(--color-light);
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+@media (max-width: 640px) {
+	.list {
+		width: 100vw;
+		justify-content: center;
+	}
+}
